@@ -1,0 +1,138 @@
+body{
+    margin: 0px;
+    font-family: "Inter";
+}
+h1{
+    font-size: 40px;
+    color: #2f80ed;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+}
+input{
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font: inherit;
+}
+.filter{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 120px repeat(2, 50px);
+}
+#add-task{
+    width: 45px;
+    height: 45px;
+    background-color: rgb(0, 119, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: transform .25s ease;
+}
+#filter-completed{
+    width: 100px;
+    height: 45px;
+    background-color: rgb(0, 154, 103);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: transform .25s ease;
+}
+#filter-not{
+    width: 100px;
+    height: 50px;
+    background-color: rgb(218, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: transform .25s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-animation {
+    animation: slideIn 0.3s ease-out;
+}
+.content{
+    width: 400px;
+    height: 50px;
+    text-align: center;
+}
+fieldset{
+    height: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+fieldset button:first-of-type{
+    margin-left: auto;
+}
+fieldset button{
+    background-color: rgba(0,0,0,0);
+    border-radius: 5px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    transition: transform .25s ease;
+}
+#return{
+    border-radius: 5px;
+    background-color: rgb(0, 102, 255);
+    margin-left: 50px;
+    margin-top: 50px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    color: white;
+    transition: transform .25s ease;
+}
+button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+/* Drag & Drop */
+
+li{
+    font-weight:bold;
+    padding-bottom: 20px;
+}
+input[type="checkbox"]{
+    width: 25px;
+    height: 25px;
+}
+.task-field{
+    text-align: left;
+    
+}
+
+#task-list li {
+  cursor: grab;
+}
+
+#task-list li.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+#task-list li.drag-over fieldset {
+  outline: 2px dashed rgba(47, 128, 237, 0.6);
+  outline-offset: 4px;
+}
