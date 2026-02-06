@@ -20,11 +20,18 @@ input{
     font: inherit;
 }
 .filter{
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: center;
-    grid-template-columns: 120px repeat(2, 50px);
 }
+.filter select{
+    width: 300px;
+    height: 25px;
+    font: inherit;
+    outline: none;
+    border-radius: 10px;
+}
+
 #add-task{
     width: 45px;
     height: 45px;

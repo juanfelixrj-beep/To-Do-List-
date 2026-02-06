@@ -4,8 +4,7 @@ const input = document.querySelector("#task-title");
 const add = document.querySelector("#add-task");
 const task_list = document.querySelector("#task-list");
 const list_title = document.querySelector("#list_title")
-const filter_completed = document.querySelector("#filter-completed");
-const filter_not = document.querySelector("#filter-not");
+const filter_select = document.querySelector("#filter-select")
 const search_task_input = document.querySelector("#search-task")
 
 const params = new URLSearchParams(window.location.search)
@@ -23,6 +22,16 @@ add.addEventListener("click", () => {
   addTask();
 });
 
+filter_select.addEventListener("change", ()=>{
+  if(filter_select.value == "Completed"){
+    filter = "not_completed"
+    renderTasks()
+  }else{
+    filter = "completed"
+    renderTasks()
+  }
+})
+
 search_task_input.addEventListener("input", ()=>{
   renderTasks(search_task_input.value);
 })
@@ -32,15 +41,6 @@ input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") addTask();
 });
 
-filter_completed.addEventListener("click", ()=>{
-  filter = "completed";
-  renderTasks()
-})
-
-filter_not.addEventListener("click", ()=>{
-  filter = "not_completed";
-  renderTasks()
-})
 
 function addTask() {
   if (input.value.trim() === "") {

@@ -18,12 +18,15 @@
             <input type="text" name="task" id="task-title" placeholder="Add a new item">
             <button id="add-task">Add</button>
             <br>
-            <p>Filter:</p>
+            <p>Order by:</p>
             <div class="filter">
-                <button id="filter-completed">Completed Tasks</button>
-                <button id="filter-not">Not Completed Tasks</button>
+                <select id="filter-select">
+                    <option value="Completed">Completed tasks</option>
+                    <option value="Not">Not completed tasks</option>
+                </select>
             </div>
             <br>
+            <p>Search:</p>
             <input type="text" name="" id="search-task" placeholder="Search Tasks">
         </div>
         <div>  
